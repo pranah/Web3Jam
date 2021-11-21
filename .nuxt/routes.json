@@ -1,0 +1,30 @@
+[
+  {
+    "name": "collector",
+    "path": "/collector",
+    "component": "C:\\\\Users\\\\mansoor\\\\Desktop\\\\Prana\\\\pranah\\\\pages\\\\collector.vue",
+    "chunkName": "pages/collector",
+    "_name": "_fef56e2a"
+  },
+  {
+    "name": "publisher",
+    "path": "/publisher",
+    "component": "C:\\\\Users\\\\mansoor\\\\Desktop\\\\Prana\\\\pranah\\\\pages\\\\publisher.vue",
+    "chunkName": "pages/publisher",
+    "_name": "_3db0ceda"
+  },
+  {
+    "name": "readPage",
+    "path": "/readPage",
+    "component": "C:\\\\Users\\\\mansoor\\\\Desktop\\\\Prana\\\\pranah\\\\pages\\\\readPage.vue",
+    "chunkName": "pages/readPage",
+    "_name": "_1c1c0457"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\mansoor\\\\Desktop\\\\Prana\\\\pranah\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_638e0db0"
+  }
+]
