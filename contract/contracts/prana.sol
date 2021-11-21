@@ -20,7 +20,7 @@ contract prana is ERC721 {
     Counters.Counter private _tokenIdTracker;
 
     //AccessControl and Ownable can be added instead of owner if time permits
-    constructor() ERC721("PranaBooks", "PBT") public {
+    constructor() ERC721("PranaHBooks", "PHB") public {
         owner = msg.sender;
         // edit rentedBlocks to appropriate time/number of blocks before final version
         // for a two-week rental period, the rentedBlocks would be 100800 blocks.
@@ -67,6 +67,7 @@ contract prana is ERC721 {
         uint256 bookPrice;
         uint256 transactionCut;
         uint256 bookSales;
+        uint256 limitedEditionSalesLimit;
     }
 
     // mapping for all books
@@ -165,7 +166,8 @@ contract prana is ERC721 {
         uint256 _isbn,
         uint256 _price,
         string memory _unencryptedBookDetailsCID,
-        uint256 _transactionCut)
+        uint256 _transactionCut,
+        uint256 _limitedEditionSalesLimit)
         public {
         require(booksInfo[_isbn].publisherAddress==address(0), "This book has already been published!");
         require(_transactionCut > 0 && _transactionCut < 80, "Your cut can't be more than 80% of the total");
@@ -174,6 +176,8 @@ contract prana is ERC721 {
         booksInfo[_isbn].bookPrice = _price;
         booksInfo[_isbn].unencryptedBookDetailsCID = _unencryptedBookDetailsCID;
         booksInfo[_isbn].transactionCut = _transactionCut;
+        // based on frontend input, int 0 is passed in if it's not a limited edition
+        booksInfo[_isbn].limitedEditionSalesLimit = _limitedEditionSalesLimit; 
         booksInfo[_isbn].bookSales = 0;
 
         //event that serves as an advertisement
@@ -189,6 +193,10 @@ contract prana is ERC721 {
         //to revert back if the buyer doesn't have the price set by the author.
         require(booksInfo[_isbn].publisherAddress != address(0),"ISBN does not exist !");
         require(msg.value >= booksInfo[_isbn].bookPrice,"Insufficient funds ! Please pay the price as set by the author.");
+        if (booksInfo[_isbn].limitedEditionSalesLimit > 0){
+            require(booksInfo[_isbn].booksSales < booksInfo[_isbn].limitedEditionSalesLimit, "This limited edition has already been sold out");
+        }
+        
         //a new tokenId is generated, and a new token is minted with that ID.
         uint256 tokenId = _tokenIdTracker.current();
         _safeMint(msg.sender, tokenId);
