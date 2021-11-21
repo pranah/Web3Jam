@@ -1,2 +1,33 @@
-# Web3Jam
+# Pranah @ Web3Jam
 eBooks meets NFTs at Web3Jam
+
+A unique NFT is generated and assigned to an owner when an e-book sale is executed. And since these tokens are unique, they behave like physical entities, i.e. as physical copies of a book. This means that there are a whole new set of behaviors that opens up for the owner, which doesn’t exist in any of the current content distribution platforms.An owner can sell or rent the book as she pleases, for the price that she chooses, to anyone in the globe.
+
+The books will have the history of its previous owners as it jumps from hand to hand, and it becomes verifiable to all whether one particular copy of Harry Potter was once owned by Emma Watson or not. Limited editions and other collectible characteristics can also be incorporated into the tokens to sell them at a premium.
+
+A whole new market gets opened up with this, while providing increased freedom and control to the customers. The platform is designed in such a way that each monetary transaction attached to a particular e-book copy results in a percentage of that transaction value being sent to the content creator/author, incentivizing their participation on the platform. Thus, both content creators and consumers are incentivized to be on the platform. The supply would always be limited, as new NFTs are only generated at the time of an e-book sale from the author/publisher, hence ensuring digital scarcity. We believe a free-market economics model would drive down the prices of resales and rentals, making it affordable for the Third World (or people in Levels 1 to 3 per Hans Rosling) and other emerging markets, nudging people away from piracy.
+
+## Demo
+
+Checkout the [demo here.](https://app.pranah.co)
+
+
+## Build Setup
+
+```bash
+# install dependencies
+$ npm install
+
+# serve with hot reload at localhost:3000
+$ npm run dev
+
+# build for production and launch server
+$ npm run build
+$ npm run start
+
+# generate static project
+$ npm run generate
+```
+
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
